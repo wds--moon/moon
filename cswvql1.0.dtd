@@ -1,0 +1,18 @@
+
+<!ELEMENT Vqls (VqlGroup*,vql*)>
+<!ATTLIST Vqls 
+ comment CDATA  #REQUIRED
+>
+<!ELEMENT VqlGroup (vql*)>
+<!ATTLIST VqlGroup 
+ comment CDATA  #REQUIRED
+>
+
+<!ELEMENT vql ANY> 
+<!ATTLIST vql 
+    id CDATA  #REQUIRED
+    model (hql|sql)  #REQUIRED
+    execute (oneobject|list|listmap|map|update)  #REQUIRED
+    dialect (oracle|mysql)  #IMPLIED
+    dialect CDATA  #IMPLIED
+>
